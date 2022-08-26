@@ -5,10 +5,7 @@ def cut_song(path, name, class_num):
     AudioSegment.ffmpeg = "/absolute/path/to/ffmpeg"
     sound = AudioSegment.from_mp3(path)
     #Selecting Portion we want to cut
-    StrtMin = 0
-    StrtSec = 0
-    EndMin = 1
-    EndSec = 1
+    StrtMin, StrtSec, EndMin, EndSec = 0, 0, 1, 1
     # Time to milliseconds conversion
     StrtTime = StrtMin*60*1000+StrtSec*1000
     EndTime = EndMin*60*1000+EndSec*1000
