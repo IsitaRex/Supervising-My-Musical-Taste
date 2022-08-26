@@ -72,12 +72,15 @@ def feature_extraction(path, pitch = 1, dynamics = 1, rhythm = 1, timbre = 1):
 names = get_names()
 class_ = ["Data/Like/" , "Data/Dislike/"]
 features = []
+label = 0
 for cla in class_:
     for fil in os.listdir(cla):
         print(fil)
-        features.append(feature_extraction(fil))
+        feat = feature_extraction(cla+fil)
+        feat.append(label)
+        features.append(feat)
+    label += 1
 
 f = open('dataset_features.pckl', 'wb')
 pickle.dump(np.array(features), f)
 f.close()
-print(len())
