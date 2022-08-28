@@ -8,3 +8,5 @@ def random_mix(X):
         X_ans.append(X[i])
     
     return np.array(X_ans)
+
+print("hi")
