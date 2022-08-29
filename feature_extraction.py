@@ -3,11 +3,19 @@ import librosa
 import numpy as np
 import pickle
 
-def get_statistics(list):
+def get_statistics(list: list):
+    '''
+    Input: a list of values
+    Output: a list with the minimum value, maximum value, mean and standard deviation of the input
+    '''
     list = np.array(list)
     return [min(list), max(list), np.mean(list), np.std(list)]
 
-def get_names(pitch = 1, dynamics = 1, rhythm = 1, timbre = 1):
+def get_names(pitch: bool = 1, dynamics: bool = 1, rhythm: bool = 1, timbre: bool = 1):
+    '''
+    Input: booleans indicating the types of features to be used (pitch, dynamics, rhythm and timbre)
+    Output: Returns a list of the names of the features for the activated types of features
+    '''
     pitch = []
     for i in range(12):
         pitch.extend([str(i+1)+"_pitch_min", str(i+1)+"_pitch_max", str(i+1)+"_pitch_mean", str(i+1)+"_pitch_std"])
@@ -36,7 +44,18 @@ def get_names(pitch = 1, dynamics = 1, rhythm = 1, timbre = 1):
 
     return features_names
     
-def feature_extraction(path, pitch = 1, dynamics = 1, rhythm = 1, timbre = 1):
+def feature_extraction(path: str, pitch: bool = 1, dynamics: bool = 1, rhythm: bool = 1, timbre: bool = 1):
+    '''
+    Input:
+    - path: the path of the song
+    - pitch: 1 to extract pitch features, 0 to not extract
+    - dynamics: 1 to extract dynamics features, 0 to not extract
+    - rhythm: 1 to extract rhythm features, 0 to not extract
+    - timbre: 1 to extract timbre features, 0 to not extract
+
+    Output:
+    - A list of lists with all the statistics for the selected features
+    '''
     y, sr = librosa.load(path)
     features = []
 
@@ -57,18 +76,24 @@ def feature_extraction(path, pitch = 1, dynamics = 1, rhythm = 1, timbre = 1):
 
     if(rhythm):
     #rhythm features
-        tempogram = librosa.feature.tempogram(y, sr)[0]
-        features.extend(get_statistics(tempogram))
+        tempogram = librosa.feature.tempogram(y, sr)
+        print(len(tempogram))
+        print(len(tempogram[0]))
+        print(len(tempogram[1]))
+        print(len(tempogram[2]))
+        #features.extend(get_statistics(tempogram))
     
     if(timbre):
     #timbre features
         mfccs = librosa.feature.mfcc(y, sr=sr)
         for i in range(len(mfccs)):
             features.extend(get_statistics(mfccs[i]))
+        print(len(mfccs[1]))
 
     return features
 
 
+# Read the dataset and extract the features
 names = get_names()
 class_ = ["Data/Like/" , "Data/Dislike/"]
 features = []
