@@ -1,4 +1,4 @@
-# Supervising My Musical Taste
+# Supervising My Musical Taste :drum:
  
 Music plays a great role in peoples life and influences different parts of the daily routine such as the mood or the performance in sports, study, work, etc. Therefore, in the contemporary era of information many researchers have dedicated their work to improving music recommendation systems that enable people to find new music or allow artists to reach a wider public.
 
