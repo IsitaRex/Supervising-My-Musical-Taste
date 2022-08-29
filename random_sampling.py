@@ -1,7 +1,7 @@
 import numpy as np
+from typing_extensions import Literal
 
-
-def random_sampling(X, dist = 'Uniform', size = 0.7):
+def random_sampling(X: np.ndarray, dist: Literal['Uniform', 'Triangular', 'Geometric']= 'Uniform', size: float = 0.7):
     '''
     Parameters:
     X -> the data of N rows and m columns
@@ -9,7 +9,7 @@ def random_sampling(X, dist = 'Uniform', size = 0.7):
     size -> the percentage of X to be chosen
 
     Output:
-    A random sample containing the size*100% of the data of X
+    - A random sample containing the size*100% of the data of X, the data that was not sampled
     '''
 
     N,_ = X.shape
@@ -38,6 +38,12 @@ def random_sampling(X, dist = 'Uniform', size = 0.7):
 
     elif dist == 'Geometric':
         samples = np.random.choice(indexes, p = p, size = n_samples, replace = False)
-    return X[np.ix_(samples)]
+    
+    not_samples = []
+    for i in indexes:
+        if(i in samples):
+            continue
+        not_samples.append(i)
+        
+    return X[np.ix_(samples)], X[np.ix_(not_samples)]
 
-print()

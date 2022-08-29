@@ -1,6 +1,14 @@
 import numpy as np
+from typing import Type
 
 def random_mix(X):
+    '''
+    Input:
+    - X: a numpy array of size (N,m)
+
+    Output:
+    - A new permutation of the numpy array over dimension N
+    '''
     N,_ = X.shape
     idx = np.random.permutation(N)
     X_ans = []
@@ -8,5 +16,3 @@ def random_mix(X):
         X_ans.append(X[i])
     
     return np.array(X_ans)
-
-print("hi")

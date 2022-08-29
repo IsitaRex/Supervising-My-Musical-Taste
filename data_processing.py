@@ -2,6 +2,14 @@ import os
 from pydub import AudioSegment
 
 def cut_song(path, name, class_num):
+    '''
+    This function cuts the songs to have 1 minute length so that all songs have the same length
+
+    Input:
+    - path: path of the song
+    - name: name to save the new short version of the song
+    - class_num: 0 for songs I like, 1 for songs I dislike
+    '''
     AudioSegment.ffmpeg = "/absolute/path/to/ffmpeg"
     sound = AudioSegment.from_mp3(path)
     #Selecting Portion we want to cut
@@ -18,6 +26,8 @@ def cut_song(path, name, class_num):
         extract.export('Data/Dislike/'+name, format="mp3")
     # new file portion.mp3 is saved at required location
 
+
+# Read all songs and cut them into 1 min long
 class_ = ["Dataset2/Like/" , "Dataset2/Dislike/"]
 class_num = 0
 for cla in class_:

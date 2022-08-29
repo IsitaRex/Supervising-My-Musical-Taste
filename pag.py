@@ -1,7 +1,16 @@
 from math import log2
 import numpy as np
 
-def pag(epsilon: float = 0.5, delta: float = 0.5, model: str = "Logistic Regression", num_features: int = 3, depth_tree: int = 3):
+def pag(
+  epsilon: float = 0.5, 
+  delta: float = 0.5, 
+  model: Literal["Logistic Regression","Decision Tree", "SVM linear","SVM polynomial", "SVM rbf"] = "Logistic Regression", 
+  num_features: int = 3, 
+  depth_tree: int = 3
+  ):
+  '''
+  Function to compute Probably approximated correct learning guarantee (PAG)
+  '''
   if(model == "Logistic Regression"):
     H = num_features + 1
   elif(model == "Decision Tree"):
