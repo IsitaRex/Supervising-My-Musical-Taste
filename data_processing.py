@@ -1,7 +1,7 @@
 import os
 from pydub import AudioSegment
 
-def cut_song(path, name, class_num):
+def cut_song(path: str, name: str, class_num: bool):
     '''
     This function cuts the songs to have 1 minute length so that all songs have the same length
 

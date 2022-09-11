@@ -31,7 +31,7 @@ def random_sampling(X: np.ndarray, dist: Literal['Uniform', 'Triangular', 'Geome
         for i in range(N):
             p.append(0.5*((1-0.5)**i))
     if dist == 'Uniform':
-        samples = np.random.choice(indexes, size = n_samples)
+        samples = np.random.choice(indexes, size = n_samples, replace = False)
 
     elif dist == 'Triangular':
         samples = np.random.choice(indexes, p = p, size = n_samples, replace = False)
