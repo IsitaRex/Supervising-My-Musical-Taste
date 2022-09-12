@@ -24,7 +24,7 @@ Then activate your environment
 conda activate musical_taste
 ```
 
-## Fearure extraction :musical_note:
+## Feature extraction :musical_note:
 My dataset is a combination of two playlists\
 [:cd: Songs I love](https://open.spotify.com/playlist/0c5l61Nfs7Ie0TrJ5NP5JJ?si=a7bdd16bc35c44b1)\
 [:cd: Songs I hate](https://open.spotify.com/playlist/37i9dQZF1EUMDoJuT8yJsl?si=3c0fe5d717994539)
@@ -44,3 +44,6 @@ For my experiment, all the features were stored as a pickle file
 
 The results with learning machines can be found at the following notebook :
 [Notebook  :musical_keyboard:](supervising_my_musical_taste.ipynb)
+
+## Multilayer Perceptron (MLP) :musical_note:
+In order to supervise the learning process of my musical taste I wanted to use a Multilayer Perceptron (MLP). Therefore I created my own MLP class which received
