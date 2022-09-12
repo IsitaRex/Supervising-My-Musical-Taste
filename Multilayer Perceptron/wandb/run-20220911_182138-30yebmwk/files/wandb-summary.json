@@ -1,1 +1,0 @@
-{"Input layer gradients": -3.087078707877512e-08, "Hidden layer 1 gradients": 8.122013682799496e-06, "Hidden layer 2 gradients": -1.8042881872853904e-05, "Output layer gradients": -2.0002701119025036e-05, "_timestamp": 1662938505.4860866, "Loss": {"min": 0.4989922119966546}, "_runtime": 7.176536560058594, "_step": 49, "_wandb": {"runtime": 16}}

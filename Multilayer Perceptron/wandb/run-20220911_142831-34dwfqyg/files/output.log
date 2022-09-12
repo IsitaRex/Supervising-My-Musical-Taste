@@ -1,4 +1,0 @@
-
-Epoch:  0 Error:  0.4991182559457031
-c:\Users\isaur\miniconda3\envs\musical_taste\lib\site-packages\ipykernel_launcher.py:54: RuntimeWarning: overflow encountered in exp
-[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.
