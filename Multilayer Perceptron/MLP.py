@@ -1,9 +1,3 @@
-import numpy as np
-from typing import Optional, List
-from Layer import Layer
-#from activation_functions import *
-
-
 class MLP(object):
   # Multilayer Perceptron class
 
@@ -15,7 +9,7 @@ class MLP(object):
     self.learning_rate = learning_rate # Learning rate
     self.errors  = [] # List to store errors
   
-  def forward(self, stimulus)->np.ndarray:
+  def forward(self, stimulus: np.ndarray)->np.ndarray:
     '''
     Forward propagation
     '''
@@ -32,36 +26,38 @@ class MLP(object):
     for layer in reversed(self.layers):
       local_gradient = layer.backward(local_gradient)
 
-  def update_weights(self):
+  def update_weights(self)-> None:
     '''
     Update weights
     '''
     for layer in self.layers:
       layer.update(self.learning_rate)
 
-  def train(self, x: np.ndarray, y: np.ndarray, epochs: int):
+  def train(self, x: np.ndarray, y: np.ndarray, epochs: int)->None:
     '''
     Train MLP
     '''
+    self.all_gradients = []
     for epoch in range(epochs):
       y_output = self.forward(x)
       error = abs(y - y_output)
       self.backward(y)
+      self.all_gradients.append(self.get_gradients())
       self.update_weights()
 
       if epoch%100 == 0:
         print("Epoch: ", epoch, "Error: ", np.mean(error))
       self.errors.append(np.mean(error))
 
-  def get_gradients(self):
+  def get_gradients(self)->List[np.ndarray]:
     '''
     Get gradients
     '''
     gradients = []
     for layer in self.layers:
-      gradients.append(layer.weights_grad)
+      gradients.append(np.mean(layer.weights_grad))
     return gradients
     
-  def predict(self, x):
+  def predict(self, x)->np.ndarray:
     y_output = self.forward(x)
     return y_output

@@ -1,6 +1,3 @@
-import numpy as np
-from typing import Optional
-
 class Layer:
 
     def __init__(
@@ -48,7 +45,7 @@ class Layer:
             return 1 - self.phi(v)**2
 
     def update(self, learning_rate: float) -> None:
-        self.weights = self.weights + learning_rate * self.weights_grad
+        self.weights = self.weights - learning_rate * self.weights_grad
 
     def phi(self, v: np.ndarray) -> np.ndarray:
         if(self.activation == "Linear"):
