@@ -29,7 +29,7 @@ My dataset is a combination of two playlists\
 [:cd: Songs I love](https://open.spotify.com/playlist/0c5l61Nfs7Ie0TrJ5NP5JJ?si=a7bdd16bc35c44b1)\
 [:cd: Songs I hate](https://open.spotify.com/playlist/37i9dQZF1EUMDoJuT8yJsl?si=3c0fe5d717994539)
 
-You can build your own dataset and create a folder Dataset with two subfolders named Like and Dislake.
+You can build your own dataset and create a folder Dataset with two subfolders named Like and Dislike.
 The first step is making all songs to have the same length
 ```
 python .\data_processing.py 
@@ -42,5 +42,5 @@ python .\feature_extraction.py
 For my experiment, all the features were stored as a pickle file
 [Dataset :musical_score:](dataset_features.pckl)
 
-The results can be found at the following notebook :
+The results with learning machines can be found at the following notebook :
 [Notebook  :musical_keyboard:](supervising_my_musical_taste.ipynb)
