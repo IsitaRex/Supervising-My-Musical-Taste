@@ -1,0 +1,1 @@
+{"Input layer": 0.0, "Hidden layer": 0.008037710661546554, "Output layer": 0.0029808391186041863, "_timestamp": 1662930006.9361339, "Loss": {"min": 0.4967498266201276}, "_runtime": 6.934413909912109, "_step": 49, "_wandb": {"runtime": 11}}

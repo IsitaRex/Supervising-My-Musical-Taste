@@ -1,0 +1,23 @@
+{
+    "os": "Windows-10-10.0.22000-SP0",
+    "python": "3.7.13",
+    "heartbeatAt": "2022-09-12T00:12:35.510460",
+    "startedAt": "2022-09-12T00:12:11.827166",
+    "docker": null,
+    "gpu": "GeForce GTX 1650 with Max-Q Design",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/IsitaRex/Supervising-My-Musical-Taste.git",
+        "commit": "cc1748bde49b05741125920ef1440f8c77832131"
+    },
+    "email": "41337834+IsitaRex@users.noreply.github.com",
+    "root": "C:/Users/isaur/OneDrive/Documents/GitHub/Supervising-My-Musical-Taste",
+    "host": "LAPTOP-VH6V5BV5",
+    "username": "isaur",
+    "executable": "c:\\Users\\isaur\\miniconda3\\envs\\musical_taste\\python.exe"
+}
