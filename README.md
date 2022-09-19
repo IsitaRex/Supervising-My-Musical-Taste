@@ -46,4 +46,7 @@ The results with learning machines can be found at the following notebook :
 [Notebook  :musical_keyboard:](supervising_my_musical_taste.ipynb)
 
 ## Multilayer Perceptron (MLP) :musical_note:
-In order to supervise the learning process of my musical taste I wanted to use a Multilayer Perceptron (MLP). Therefore I created my own MLP class which received
+In order to supervise the learning process of my musical taste I used a self created 
+[Multilayer Perceptron ](https://github.com/IsitaRex/Supervising-My-Musical-Taste/blob/810f596b126773d3c525ab098154cfee992d2f46/Multilayer%20Perceptron/MLP.py)
+which receives a list of 
+[layers](https://github.com/IsitaRex/Supervising-My-Musical-Taste/blob/810f596b126773d3c525ab098154cfee992d2f46/Multilayer%20Perceptron/Layer.py) and a learning rate.
