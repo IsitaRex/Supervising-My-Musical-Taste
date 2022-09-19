@@ -50,3 +50,13 @@ In order to supervise the learning process of my musical taste I used a self cre
 [Multilayer Perceptron ](https://github.com/IsitaRex/Supervising-My-Musical-Taste/blob/810f596b126773d3c525ab098154cfee992d2f46/Multilayer%20Perceptron/MLP.py)
 which receives a list of 
 [layers](https://github.com/IsitaRex/Supervising-My-Musical-Taste/blob/810f596b126773d3c525ab098154cfee992d2f46/Multilayer%20Perceptron/Layer.py) and a learning rate.
+
+### Example model
+To create a MLP with one hidden layer, 80 inputs, one output, Sigmoid activation functions and a learning rate of 0.1 use:
+```
+model = MLP(layers = [Layer(80, 1, activation = 'Sigmoid'),Layer(1, 1, activation = 'Sigmoid'),Layer(1, 1, activation = 'Sigmoid')], learning_rate = 0.1)
+```
+To train the model
+```
+model.train(X_train.T, y_train.T, epochs = 50)
+```
