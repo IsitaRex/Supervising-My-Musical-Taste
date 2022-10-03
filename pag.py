@@ -24,4 +24,3 @@ def pag(
     H = np.inf
   return (1/epsilon)*(np.log(abs(H))+np.log(1/delta))
 
-print(pag(model = "Logistic Regression"))
